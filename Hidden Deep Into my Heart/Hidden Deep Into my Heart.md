@@ -1,41 +1,45 @@
 # 💘 Cupid’s Secret Vault – CTF Walkthrough
 
-## 🧩 Challenge Overview
+> Target: `http://10.49.129.201:5000`
+> Category: Web
+> Difficulty: Easy–Medium
+> Flag: `THM{l0v3_is_in_th3_r0b0ts_txt}`
 
-Target:
+---
+
+## 🧭 Initial Reconnaissance
+
+Upon visiting the target:
 
 ```
 http://10.49.129.201:5000
 ```
 
-The objective was to uncover the secret hidden inside Cupid’s Vault.
+We are greeted with a simple landing page titled:
+
+> **Love Letters Anonymous**
+
+### 🖼 Landing Page
+
+![Landing Page](landing_page.png)
+
+The page contains no forms, no JavaScript, and no visible functionality — suggesting that the real application is hidden elsewhere.
 
 ---
 
-# 🔎 Step 1 – Initial Recon
+## 🔎 Checking robots.txt
 
-Opening the main page revealed a simple landing page:
-
-![Landing Page](images/landing-page.png)
-
-The page source contained no visible forms, scripts, or hidden functionality.
-
-This suggested:
-
-* The real functionality was hidden behind another route.
-* Enumeration would be required.
-
----
-
-# 📁 Step 2 – Checking `robots.txt`
-
-Navigating to:
+As part of standard web enumeration, we checked:
 
 ```
 http://10.49.129.201:5000/robots.txt
 ```
 
-Revealed:
+### 🖼 robots.txt
+
+![robots.txt](robots.png)
+
+Contents:
 
 ```
 User-agent: *
@@ -44,11 +48,7 @@ Disallow: /cupids_secret_vault/*
 # cupid_arrow_2026!!!
 ```
 
-Screenshot:
-
-![Robots.txt](images/robots.png)
-
-## 🔥 Key Findings
+### 🚨 Key Findings
 
 1. Hidden directory:
 
@@ -56,17 +56,20 @@ Screenshot:
    /cupids_secret_vault/
    ```
 
-2. Suspicious string:
+2. Commented string:
 
    ```
    cupid_arrow_2026!!!
    ```
 
-This is a classic CTF pattern — credentials hidden inside `robots.txt`.
+This immediately suggests:
+
+* A hidden route exists
+* The comment may contain credentials
 
 ---
 
-# 🔐 Step 3 – Accessing the Secret Vault
+## 🏛 Accessing the Secret Vault
 
 Navigating to:
 
@@ -74,58 +77,65 @@ Navigating to:
 http://10.49.129.201:5000/cupids_secret_vault/
 ```
 
-Displayed:
+### 🖼 Vault Landing Page
 
-![Vault Landing](images/vault-landing.png)
+![Vault Landing](vault_landing.png)
 
-The message stated:
+The page states:
 
 > "You've found the secret vault, but there's more to discover..."
 
-This confirmed the path was correct, but something deeper existed.
+This implies further enumeration is required.
 
 ---
 
-# 👑 Step 4 – Finding the Administrator Panel
+## 🔐 Discovering the Admin Login
 
-Further enumeration revealed:
+By appending common administrative paths:
 
 ```
 /cupids_secret_vault/administrator
 ```
 
-Which displayed an admin login panel:
+We discover an admin login panel.
 
-![Admin Login](images/admin-login.png)
+### 🖼 Admin Login Page
+
+![Admin Login](admin_login.png)
 
 ---
 
-# 🔓 Step 5 – Credential Testing
+## 🧠 Credential Discovery
 
-From `robots.txt`, we had:
+From `robots.txt`, we previously found:
 
 ```
 cupid_arrow_2026!!!
 ```
 
-Tried logging in with:
+Given its suspicious placement in a comment, we attempt login with:
 
-| Username | Password            |
-| -------- | ------------------- |
-| admin    | cupid_arrow_2026!!! |
+**Username:**
 
-And it worked.
+```
+admin
+```
 
-No SQL injection required.
-No brute force required.
+**Password:**
 
-This was simple credential reuse exposed via `robots.txt`.
+```
+cupid_arrow_2026!!!
+```
 
 ---
 
-# 🏁 Final Flag
+## 🎉 Successful Login
 
-After successful login, the flag was revealed:
+The credentials work, granting access to the vault and revealing the flag.
+
+---
+
+## 🏁 Flag
 
 ```
 THM{l0v3_is_in_th3_r0b0ts_txt}

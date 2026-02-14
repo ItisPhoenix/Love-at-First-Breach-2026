@@ -31,7 +31,7 @@ After registering and logging in, the dashboard shows:
 
 ### 🖼 Logged-In Dashboard
 
-![Logged In Shop](images/challenge-4/shop_logged_in.png)
+![Logged In Shop](shop_logged_in.png)
 
 Attempting to purchase an item results in:
 
@@ -53,7 +53,7 @@ tryheartme_jwt = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 ### 🖼 JWT Cookie Identified
 
-![JWT Cookie](images/challenge-4/jwt_cookie.png)
+![JWT Cookie](jwt_cookie.png)
 
 This confirms the application uses **JSON Web Tokens (JWT)** for authentication.
 
@@ -217,7 +217,7 @@ After refresh:
 
 ### 🖼 Admin Dashboard View
 
-![Admin Role](images/challenge-4/admin_view.png)
+![Admin Role](admin_view.png)
 
 This confirms:
 
@@ -237,7 +237,7 @@ The hidden item becomes accessible.
 
 ### 🖼 ValenFlag Product Page
 
-![ValenFlag Product](images/challenge-4/valenflag.png)
+![ValenFlag Product](valenflag.png)
 
 Price:
 

@@ -31,7 +31,7 @@ After registering and logging in, the dashboard shows:
 
 ### 🖼 Logged-In Dashboard
 
-![Logged In Shop](shop_logged_in.png)
+![Logged In Shop](logged_in_shop.png)
 
 Attempting to purchase an item results in:
 
@@ -217,7 +217,7 @@ After refresh:
 
 ### 🖼 Admin Dashboard View
 
-![Admin Role](admin_view.png)
+![Admin Role](admin_role.png)
 
 This confirms:
 
@@ -237,7 +237,7 @@ The hidden item becomes accessible.
 
 ### 🖼 ValenFlag Product Page
 
-![ValenFlag Product](valenflag.png)
+![ValenFlag Product](valenflag_product.png)
 
 Price:
 

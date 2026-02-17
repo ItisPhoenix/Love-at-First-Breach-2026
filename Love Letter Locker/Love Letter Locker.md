@@ -99,6 +99,7 @@ We manually modify the URL:
 Instead of receiving an authorization error, the application loads the letter successfully.
 
 ### Flag Retrieved
+![Flag](flag.png)
 
 ```
 THM{1_c4n_r3ad_4ll_l3tters_w1th_th1s_1d0r}

@@ -57,7 +57,7 @@ The page displays:
 📌 Important observation:
 There are already **2 letters in the system**, even though our account is new.
 
-![Dashboard](dashboard.png)
+![Dashboard](dashboard(2).png)
 
 ---
 
